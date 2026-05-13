@@ -45,7 +45,9 @@ class LoginSerializer(serializers.Serializer):
 
     username = serializers.CharField()
 
-    password = serializers.CharField()
+    password = serializers.CharField(
+        write_only=True
+    )
 
     def validate(self, data):
 
@@ -56,7 +58,8 @@ class LoginSerializer(serializers.Serializer):
 
         if not user:
             raise serializers.ValidationError(
-                "Invalid credentials"
+                "Invalid username or password"
             )
 
-        return user
+        data["user"] = user
+        return data

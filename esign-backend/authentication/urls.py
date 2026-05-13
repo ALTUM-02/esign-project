@@ -1,9 +1,11 @@
 from django.urls import path
+from rest_framework.authtoken.views import obtain_auth_token
 
 from .views import (
     register_user,
     login_user,
     user_profile,
+    example_view,
 )
 
 urlpatterns = [
@@ -18,7 +20,17 @@ urlpatterns = [
     ),
     
     path(
+        "token/",
+        obtain_auth_token
+    ),
+    
+    path(
         "profile/",
         user_profile
+    ),
+    
+    path(
+        "example/",
+        example_view
     )
 ]
