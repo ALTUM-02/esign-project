@@ -41,36 +41,6 @@ def register_user(request):
         status=status.HTTP_400_BAD_REQUEST,
     )
 
-@api_view(["POST"])
-def login_user(request):
-
-    serializer = LoginSerializer(
-        data=request.data
-    )
-
-    if serializer.is_valid():
-
-        user = serializer.validated_data[
-            "user"
-        ]
-
-        refresh = RefreshToken.for_user(
-            user
-        )
-
-        return Response({
-
-            "refresh": str(refresh),
-
-            "access": str(
-                refresh.access_token
-            ),
-
-            "user": {
-                "id": user.id,
-                "username": user.username,
-                "email": user.
-
 
 
 @api_view(["GET"])
