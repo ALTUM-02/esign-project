@@ -1,119 +1,99 @@
 import { useState } from "react";
-import InputField from "../../components/forms/InputField";
-import PrimaryButton from "../../components/buttons/PrimaryButton";
-import { useNavigate , Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import api from "../../services/api";
 
-const Register = () => {
+const Login = () => {
+
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
+    username: "",
     password: "",
-    confirmPassword: "",
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+
     e.preventDefault();
 
-    console.log(formData);
+    try {
 
-    // Later:
-    // Send data to backend API
+      const response = await api.post("login/", formData);
+
+      localStorage.setItem("token", response.data.access);
+
+      alert("Login successful");
+
+      navigate("/dashboard");
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert("Invalid username or password");
+    }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center mb-2">
-          Create Account
-        </h1>
 
-        <p className="text-gray-500 text-center mb-6">
-          Register to continue using E-Sign
-        </p>
+    <div className="flex flex-col items-center justify-center min-h-screen">
 
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-4"
+      <h1 className="text-3xl font-bold mb-5">
+        Login
+      </h1>
+
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 w-80"
+      >
+
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={formData.username}
+          onChange={handleChange}
+          className="border p-3 rounded"
+        />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={formData.password}
+          onChange={handleChange}
+          className="border p-3 rounded"
+        />
+
+        <button
+          type="submit"
+          className="bg-blue-500 text-white p-3 rounded"
         >
-          <div>
-            <InputField
-              type="text"
-              placeholder="Full Name"
-            />
+          Login
+        </button>
 
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              value={formData.fullName}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg p-3 outline-none focus:border-blue-500"
-            />
-          </div>
+      </form>
 
-          <div>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg p-3 outline-none focus:border-blue-500"
-            />
-          </div>
+      <p className="mt-4">
+        Don't have an account?
+      </p>
 
-          <div>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={formData.password}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg p-3 outline-none focus:border-blue-500"
-            />
-          </div>
+      <Link
+        to="/register"
+        className="text-blue-500"
+      >
+        Register
+      </Link>
 
-          <div>
-            <input
-              type="password"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg p-3 outline-none focus:border-blue-500"
-            />
-
-        
-            <button type="submit" >
-              Register
-            </button>
-          </div>
-        </form>
-
-        <p className="text-center text-gray-500 mt-6">
-          Already have an account?
-          <Link
-            to="/login"
-            className="text-blue-600 ml-1 font-medium"
-          >
-            Login
-          </Link>
-        </p>
-      </div>
     </div>
   );
 };
 
-export default Register;
+export default Login;
