@@ -1,9 +1,10 @@
 import { useState } from "react";
 import InputField from "../../components/forms/InputField";
 import PrimaryButton from "../../components/buttons/PrimaryButton";
-import { Link } from "react-router-dom";
+import { useNavigate , Link} from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -54,8 +55,8 @@ const Register = () => {
 
             <input
               type="text"
-              name="fullName"
-              placeholder="Full Name"
+              name="username"
+              placeholder="Username"
               value={formData.fullName}
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg p-3 outline-none focus:border-blue-500"
@@ -93,10 +94,11 @@ const Register = () => {
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg p-3 outline-none focus:border-blue-500"
             />
-          </div>
 
-          <div className="pt-2">
-            <PrimaryButton title="Register" />
+        
+            <button type="submit" >
+              Register
+            </button>
           </div>
         </form>
 
