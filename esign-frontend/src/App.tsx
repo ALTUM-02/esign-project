@@ -1,6 +1,9 @@
-import AppRoutes from "./routes/AppRoutes";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
-const App = () => {
-  return <AppRoutes />;                  
-};
+function App() {
+  return (
+    <Dashboard />
+  );
+}
+
 export default App;
