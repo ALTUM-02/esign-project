@@ -77,6 +77,6 @@ def login_user(request):
         })
 
     return Response(
-        serializer.errors,
+    
         status=status.HTTP_400_BAD_REQUEST,
     )
