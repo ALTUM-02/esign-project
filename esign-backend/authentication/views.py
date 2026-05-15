@@ -80,3 +80,4 @@ def login_user(request):
         serializer.errors,
         status=status.HTTP_400_BAD_REQUEST,
     )
+    

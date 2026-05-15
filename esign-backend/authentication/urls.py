@@ -16,4 +16,5 @@ urlpatterns = [
         "login/",
         login_user
     ),
+
 ]
