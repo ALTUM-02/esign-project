@@ -21,7 +21,7 @@ const Dashboard = () => {
         setUser(response.data);
       })
       .catch((error) => {
-        console.error(e
+        console.error(error);
       });
 
   }, []);
