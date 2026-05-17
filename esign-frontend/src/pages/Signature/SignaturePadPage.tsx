@@ -8,7 +8,9 @@ const SignaturePadPage = () => {
   const sigCanvas = useRef<any>(null);
 
   const clear = () => {
+
     sigCanvas.current.clear();
+
   };
 
   const save = () => {
@@ -29,10 +31,13 @@ const SignaturePadPage = () => {
   };
 
   return (
+
     <div className="p-10">
 
       <h1 className="text-3xl font-bold mb-5">
+
         Signature Pad
+
       </h1>
 
       <div className="border w-fit">
@@ -66,6 +71,7 @@ const SignaturePadPage = () => {
         </button>
 
       </div>
+
     </div>
   );
 };

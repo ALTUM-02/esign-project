@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import api from "../../services/api";
 
-const Login = () => {
+const Register = () => {
 
   const navigate = useNavigate();
 
@@ -96,4 +96,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registeregister;
