@@ -10,7 +10,8 @@ from .serializers import (
     LoginSerializer,
 )
 
-
+@api_view(["POST"])
+@permission_classes([AllowAny])
 
 @api_view(["POST"])
 def register_user(request):
