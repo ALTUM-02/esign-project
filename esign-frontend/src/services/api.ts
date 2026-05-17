@@ -18,13 +18,13 @@ api.interceptors.request.use(
 
     const publicRoutes = [
 
-      "/auth/login/",
-
       "/auth/register/",
+
+      "/auth/login/",
 
     ];
 
-    const isPublic =
+    const isPublicRoute =
       publicRoutes.some(
         (route) =>
           config.url?.includes(route)
@@ -32,7 +32,7 @@ api.interceptors.request.use(
 
     if (
       token &&
-      !isPublic
+      !isPublicRoute
     ) {
 
       config.headers.Authorization =
