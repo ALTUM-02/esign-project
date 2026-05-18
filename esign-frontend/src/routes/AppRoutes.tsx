@@ -11,4 +11,3 @@ import Sign from "../pages/Sign/Sign";
 import Profile from "../pages/Profile/Profile";
 
 const AppRoutes = () => {
-  return (
