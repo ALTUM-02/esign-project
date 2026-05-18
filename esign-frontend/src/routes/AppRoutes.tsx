@@ -46,4 +46,3 @@ const AppRoutes = () => {
   );
 };
 
-export def
