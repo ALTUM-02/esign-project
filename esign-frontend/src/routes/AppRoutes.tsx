@@ -28,4 +28,3 @@ const AppRoutes = () => {
           path="/signature"
           element={
             <SignaturePadPage  />
-          }
