@@ -38,4 +38,3 @@ const AppRoutes = () => {
           element={<PDFViewer />}
         />
 
-        <Route path="/sign
