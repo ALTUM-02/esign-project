@@ -25,4 +25,3 @@ const AppRoutes = () => {
         <Route path="/upload" element={<Upload />} />
 
         <Route
-      
