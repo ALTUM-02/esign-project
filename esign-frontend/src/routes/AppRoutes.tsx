@@ -6,4 +6,3 @@ import Register from "../pages/Register/Register";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Upload from "../pages/Upload/Upload";
 import PDFViewer from "../pages/PDFViewer/PDFViewer";
-import 
