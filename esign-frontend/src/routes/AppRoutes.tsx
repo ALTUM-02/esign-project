@@ -26,4 +26,3 @@ const AppRoutes = () => {
 
         <Route
           path="/signature"
-          element={
