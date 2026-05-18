@@ -40,6 +40,3 @@ const AppRoutes = () => {
 
         <Route path="/sign" element={<Sign />} />
 
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-
