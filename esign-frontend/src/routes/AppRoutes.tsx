@@ -42,4 +42,4 @@ const AppRoutes = () => {
 
         <Route path="/profile" element={<Profile />} />
       </Routes>
-    </BrowserRouter>
+
