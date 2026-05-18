@@ -39,4 +39,3 @@ const AppRoutes = () => {
         />
 
         <Route path="/sign" element={<Sign />} />
-
