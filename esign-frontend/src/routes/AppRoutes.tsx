@@ -20,4 +20,3 @@ const AppRoutes = () => {
 
         <Route path="/register" element={<Register />} />
 
-        <Route path="/dashbo
