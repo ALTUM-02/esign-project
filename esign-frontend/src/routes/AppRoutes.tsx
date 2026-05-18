@@ -31,4 +31,3 @@ const AppRoutes = () => {
           }
         />
 
-        <Route path="/pdf-viewer" element={<PDFViewer />} /
