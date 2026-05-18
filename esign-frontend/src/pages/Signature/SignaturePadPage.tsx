@@ -46,8 +46,8 @@ const SignaturePadPage = () => {
           ref={sigCanvas}
           penColor="black"
           canvasProps={{
-            width: 500,
-            height: 200,
+            width: 800,
+            height: 800,
             className: "bg-white",
           }}
         />
