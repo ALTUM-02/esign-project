@@ -5,5 +5,3 @@ import Login from "./pages/Login/Login";
 import MainLayout from "./layouts/MainLayout";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Home from "./pages/Home/Home";
-
-fun
