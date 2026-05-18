@@ -12,4 +12,3 @@ import Profile from "../pages/Profile/Profile";
 
 const AppRoutes = () => {
   return (
-    <BrowserRou 
