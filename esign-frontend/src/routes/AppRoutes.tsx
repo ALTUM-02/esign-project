@@ -12,5 +12,4 @@ import Profile from "../pages/Profile/Profile";
 
 const AppRoutes = () => {
   return (
-    <BrowserRouter>
-      <Routes>   
+    <BrowserRou 
