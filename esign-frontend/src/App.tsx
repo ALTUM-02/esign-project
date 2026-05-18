@@ -19,4 +19,3 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
