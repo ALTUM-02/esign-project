@@ -21,5 +21,3 @@ const AppRoutes = () => {
         <Route path="/register" element={<Register />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
-
-        <Route path="/upload" element={<Upload />} />
