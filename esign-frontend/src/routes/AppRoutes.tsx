@@ -29,4 +29,3 @@ const AppRoutes = () => {
           element={
             <SignaturePadPage  />
           }
-        />
