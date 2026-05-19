@@ -22,4 +22,3 @@ const Dashboard = () => {
       })
       .catch((error) => {
         console.error(error);
-      });
