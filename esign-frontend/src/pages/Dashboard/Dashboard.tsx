@@ -38,4 +38,3 @@ const Dashboard = () => {
           <p>Staff: {user.is_staff ? "Yes" : "No"}</p>
         </div>
       )}
-    </div>
