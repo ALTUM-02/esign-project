@@ -10,4 +10,4 @@ type User = {
 
 const Dashboard = () => {
 
-  const [user, setUser] = useState<User |
+  const [user, setUser] = 
