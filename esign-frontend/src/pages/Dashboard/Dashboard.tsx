@@ -14,4 +14,4 @@ const Dashboard = () => {
 
   useEffect(() => {
 
-    api.get("me/")
+    api.get("m
