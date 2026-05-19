@@ -9,4 +9,3 @@ type User = {
 };
 
 const Dashboard = () => {
- 
