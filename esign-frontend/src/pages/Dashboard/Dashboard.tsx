@@ -21,4 +21,4 @@ const Dashboard = () => {
         setUser(response.data);
       })
       .catch((error) => {
-        console.error(error);
+        consol
