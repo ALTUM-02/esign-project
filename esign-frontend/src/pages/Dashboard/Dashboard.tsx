@@ -28,4 +28,4 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Dashbo
+      <h1>D
