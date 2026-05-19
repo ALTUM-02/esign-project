@@ -32,4 +32,3 @@ const Dashboard = () => {
 
       {user && (
         <div>
-          <p>ID:
