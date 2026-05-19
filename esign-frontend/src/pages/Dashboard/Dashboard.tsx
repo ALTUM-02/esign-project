@@ -37,4 +37,3 @@ const Dashboard = () => {
           <p>Email: {user.email}</p>
           <p>Staff: {user.is_staff ? "Yes" : "No"}</p>
         </div>
-      )}
