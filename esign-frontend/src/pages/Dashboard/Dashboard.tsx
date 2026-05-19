@@ -8,4 +8,3 @@ type User = {
   is_staff: boolean;
 };
 
-const 
