@@ -39,4 +39,3 @@ const Dashboard = () => {
         </div>
       )}
     </div>
-  );
