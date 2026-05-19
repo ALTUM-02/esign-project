@@ -15,4 +15,3 @@ const Dashboard = () => {
   useEffect(() => {
 
     api.get("me/")
-      .then(
