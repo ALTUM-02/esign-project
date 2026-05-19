@@ -24,4 +24,3 @@ const Dashboard = () => {
         console.error(error);
       });
 
-  },
