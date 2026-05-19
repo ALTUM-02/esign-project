@@ -19,4 +19,3 @@ const Dashboard = () => {
         console.log(response.data);
 
         setUser(response.data);
-      })
