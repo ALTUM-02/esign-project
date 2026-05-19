@@ -11,4 +11,3 @@ type User = {
 const Dashboard = () => {
 
   const [user, setUser] = useState<User | null>(null);
-
