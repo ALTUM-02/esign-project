@@ -3,4 +3,3 @@ import api from "../../services/api";
 
 type User = {
   id: number;
-  us
