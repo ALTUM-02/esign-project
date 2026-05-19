@@ -32,4 +32,4 @@ const Dashboard = () => {
 
       {user && (
         <div>
-          <p>ID: {user   
+          <p>ID:
