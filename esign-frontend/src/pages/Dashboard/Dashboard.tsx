@@ -28,4 +28,3 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>D
