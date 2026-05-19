@@ -7,4 +7,3 @@ type User = {
   email: string;
   is_staff: boolean;
 };
-
