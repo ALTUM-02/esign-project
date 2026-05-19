@@ -1,2 +1,2 @@
 import { useEffect, useState } from "react";
-import api from "../../
+import api from 
