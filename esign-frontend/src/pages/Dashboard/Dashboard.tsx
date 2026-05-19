@@ -34,4 +34,3 @@ const Dashboard = () => {
         <div>
           <p>ID: {user.id}</p>
           <p>Username: {user.username}</p>
-          <p>Email: 
