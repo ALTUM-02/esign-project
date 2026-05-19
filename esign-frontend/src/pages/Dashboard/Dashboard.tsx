@@ -35,4 +35,4 @@ const Dashboard = () => {
           <p>ID: {user.id}</p>
           <p>Username: {user.username}</p>
           <p>Email: {user.email}</p>
-          <p>Staff: {user.is_staff ? "Yes" : "No
+          <p>Staff: {user.is_staff ? "Y
