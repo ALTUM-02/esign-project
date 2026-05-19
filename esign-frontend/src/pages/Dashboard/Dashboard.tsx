@@ -17,4 +17,3 @@ const Dashboard = () => {
     api.get("me/")
       .then((response) => {
         console.log(response.data);
-
