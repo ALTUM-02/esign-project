@@ -27,4 +27,3 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
