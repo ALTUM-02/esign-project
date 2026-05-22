@@ -9,4 +9,3 @@ class Document(models.Model):
         on_delete=models.CASCADE
     )
 
-    title = 
