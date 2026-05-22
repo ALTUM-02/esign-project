@@ -15,4 +15,3 @@ class Document(models.Model):
 
     original_pdf = models.FileField(
         upload_to="documents/originals/"
-    )
