@@ -31,4 +31,3 @@ class Document(models.Model):
         auto_now_add=True
     )
 
-    def __s
