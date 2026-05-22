@@ -86,7 +86,6 @@ const Documents = () => {
                 href={`http://127.0.0.1:8000${doc.file}`}
                 target="_blank"
                 rel="noreferrer"
-                classNam
 
               {doc.signed_pdf && (
 
