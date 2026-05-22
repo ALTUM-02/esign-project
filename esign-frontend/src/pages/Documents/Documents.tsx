@@ -80,10 +80,7 @@ const Documents = () => {
                 : "Pending"}
             </p>
 
-            <div className="flex gap-4 flex-wrap">
-
-              <a
-                
+            <div className="flex gap-4 flex-wrap">   
 
               {doc.signed_pdf && (
 
