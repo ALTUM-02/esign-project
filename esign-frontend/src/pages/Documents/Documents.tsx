@@ -80,7 +80,16 @@ const Documents = () => {
                 : "Pending"}
             </p>
 
-            <div className="flex gap-4 flex-wrap">   
+            <div className="flex gap-4 flex-wrap"> 
+
+                <Link
+                    to={`/documents/${doc.id}`}
+                    className="bg-blue-600 text-white px-4 py-2 rounded-lg"
+                >
+
+                    Open PDF
+
+                </Link>
 
               {doc.signed_pdf && (
 
