@@ -5,6 +5,10 @@ import {
 
 import api from "../../services/api";
 
+import {
+  Link,
+} from "react-router-dom";
+
 type DocumentType = {
 
   id: number;
@@ -82,12 +86,6 @@ const Documents = () => {
                 href={`http://127.0.0.1:8000${doc.file}`}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg"
-              >
-
-                Open PDF
-
-              </a>
 
               {doc.signed_pdf && (
 
