@@ -23,4 +23,4 @@ class Document(models.Model):
         blank=True,
     )
 
-    signed = models.BooleanField(
+    signed = models.Bo
