@@ -13,4 +13,3 @@ class Document(models.Model):
         max_length=255
     )
 
-    original
