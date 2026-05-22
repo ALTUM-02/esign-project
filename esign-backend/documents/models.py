@@ -10,4 +10,3 @@ class Document(models.Model):
     )
 
     title = models.CharField(
-    
