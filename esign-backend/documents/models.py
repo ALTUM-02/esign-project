@@ -21,4 +21,3 @@ class Document(models.Model):
         upload_to="documents/signed/",
         null=True,
         blank=True,
-    )
