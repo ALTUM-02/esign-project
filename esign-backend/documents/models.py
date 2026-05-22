@@ -24,4 +24,3 @@ class Document(models.Model):
     )
 
     signed = models.BooleanField(
-        defau
