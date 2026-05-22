@@ -6,4 +6,3 @@ class Document(models.Model):
 
     user = models.ForeignKey(
         User,
-        on_delet
