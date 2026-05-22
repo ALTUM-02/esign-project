@@ -13,4 +13,4 @@ class Document(models.Model):
         max_length=255
     )
 
-    original_pdf = models.FileField(
+    original_pdf = models.
