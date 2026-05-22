@@ -25,5 +25,4 @@ class Document(models.Model):
 
     signed = models.BooleanField(
         default=False
-    )
-  
+    ) 
