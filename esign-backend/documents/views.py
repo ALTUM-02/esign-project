@@ -47,6 +47,20 @@ def upload_document(request):
         status=400,
     )
 
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def get_documents(request):
+
+    documents = Document.objects.filter(
+        user=request.user
+    ).order_by("-id")
+
+    serializer = DocumentSerializer(
+        documents,
+        many=True
+    )
+
+    return Response(serializer.data)
 
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
@@ -148,3 +162,5 @@ def send_signed_pdf(request, pk):
             },
             status=500,
         )
+        
+        
