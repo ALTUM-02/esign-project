@@ -32,4 +32,3 @@ class Document(models.Model):
     )
 
     def __str__(self):
-        retu
