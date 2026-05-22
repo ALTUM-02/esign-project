@@ -17,4 +17,4 @@ class Document(models.Model):
         upload_to="documents/originals/"
     )
 
-    signed_pdf = models.FileField
+    signed_pdf = models
