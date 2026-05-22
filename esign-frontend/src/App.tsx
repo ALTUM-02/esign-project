@@ -20,6 +20,8 @@ import Sign from "./pages/Sign/Sign";
 
 import Documents from "./pages/Documents/Documents";
 
+import DocumentView from "./pages/DocumentView/DocumentView";
+
 import SignaturePadPage
 from "./pages/Signature/SignaturePadPage";
 
@@ -68,6 +70,11 @@ function App() {
           <Route
             path="/documents"
             element={<Documents />}
+          />
+
+          <Route
+            path="/documents/:id"
+            element={<DocumentView />}
           />
 
           <Route
