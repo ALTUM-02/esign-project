@@ -18,6 +18,8 @@ import Upload from "./pages/Upload/Upload";
 
 import Sign from "./pages/Sign/Sign";
 
+import Documents from "./pages/Documents/Documents";
+
 import SignaturePadPage
 from "./pages/Signature/SignaturePadPage";
 
@@ -61,6 +63,11 @@ function App() {
           <Route
             path="/sign"
             element={<Sign />}
+          />
+
+          <Route
+            path="/documents"
+            element={<Documents />}
           />
 
           <Route
