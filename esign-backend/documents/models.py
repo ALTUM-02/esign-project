@@ -23,4 +23,3 @@ class Document(models.Model):
         blank=True,
     )
 
-    signed = 
