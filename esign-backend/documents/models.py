@@ -3,5 +3,3 @@ from authentication.models import User
 
 
 class Document(models.Model):
-
-    user = 
