@@ -86,7 +86,7 @@ const Upload = () => {
       /* REDIRECT TO VIEWER */
 
       navigate(
-        `/documents/${response.data.id}`
+        `/documents/'${response.data.id}'`
       );
 
     } catch (error: any) {

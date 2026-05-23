@@ -63,6 +63,11 @@ function App() {
           />
 
           <Route
+            path="/PDFViewer/:id"
+            element={<PDFViewer />}
+          />
+
+          <Route
             path="/sign"
             element={<Sign />}
           />
