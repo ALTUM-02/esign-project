@@ -32,7 +32,7 @@ api.interceptors.request.use(
 
     if (
       token &&
-      !isPublicRo
+      !isPublicRoute
     ) {
 
       config.headers.Authorization =
