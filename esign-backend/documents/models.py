@@ -28,6 +28,9 @@ class Document(models.Model):
         null=True,
         blank=True
     )
+    signed = models.BooleanField(
+        default=False
+    )
 
     def __str__(self):
 

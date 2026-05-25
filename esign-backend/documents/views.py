@@ -93,7 +93,7 @@ def save_signed_pdf(request, pk):
             "signed_pdf"
         )
 
-        document.signed_pdf = signed_pdf
+        document.signed_file = signed_pdf
 
         document.signed = True
 
@@ -136,7 +136,7 @@ def send_signed_pdf(request, pk):
                 status=400
             )
 
-        if not document.signed_pdf:
+        if not document.signed_file:
             return Response(
                 {"error": "No signed PDF available"},
                 status=400
@@ -149,7 +149,7 @@ def send_signed_pdf(request, pk):
         )
 
         mail.attach_file(
-            document.signed_pdf.path
+            document.signed_file.path
         )
 
         mail.send()
