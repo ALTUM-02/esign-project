@@ -21,8 +21,24 @@ from authentication.models import AuditTrail
 from django.core.mail import EmailMessage
 
 
+from rest_framework.decorators import (
+    api_view,
+    permission_classes,
+    parser_classes
+)
+
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.response import Response
+
+from .models import Document
+from authentication.models import AuditTrail
+from .serializers import DocumentSerializer
+
+
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
+@parser_classes([MultiPartParser, FormParser])
 def upload_document(request):
 
     serializer = DocumentSerializer(
