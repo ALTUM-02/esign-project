@@ -5,7 +5,6 @@ import {
 
 import {
   useParams,
-  Link,
 } from "react-router-dom";
 
 import api from "../../services/api";
@@ -21,10 +20,6 @@ type DocumentType = {
 
   file: string;
 
-  signed_pdf: string;
-
-  signed: boolean;
-
 };
 
 const DocumentView = () => {
@@ -35,9 +30,6 @@ const DocumentView = () => {
     useState<DocumentType | null>(
       null
     );
-
-  const [loading, setLoading] =
-    useState(true);
 
   useEffect(() => {
 
@@ -52,99 +44,45 @@ const DocumentView = () => {
 
         setDocumentData(found);
 
-      })
-      .catch((error) => {
-
-        console.error(error);
-
-      })
-      .finally(() => {
-
-        setLoading(false);
-
       });
 
   }, [id]);
 
-  if (loading) {
-
-    return (
-
-      <div className="p-10">
-
-        Loading document...
-
-      </div>
-
-    );
-  }
-
   if (!documentData) {
 
     return (
-
       <div className="p-10">
-
-        Document not found
-
+        Loading...
       </div>
-
     );
   }
 
   return (
 
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 p-6">
 
-      <div className="bg-white shadow p-4 flex justify-between items-center">
+      <div className="bg-white rounded-2xl shadow-xl p-6">
 
-        <div>
+        <div className="flex justify-between items-center mb-6">
 
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-3xl font-bold">
 
             {documentData.title}
 
           </h1>
 
-          <p className="text-gray-500">
-
-            Status:
-            {" "}
-
-            {documentData.signed
-              ? "Signed"
-              : "Pending"}
-
-          </p>
-
-        </div>
-
-        <div className="flex gap-3">
-
-          <Link
-            to="/documents"
-            className="bg-gray-500 text-white px-4 py-2 rounded-lg"
-          >
-
-            Back
-
-          </Link>
-
           <a
             href={`http://127.0.0.1:8000${documentData.file}`}
-            download
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg"
+            target="_blank"
+            rel="noreferrer"
+            className="bg-blue-600 text-white px-5 py-3 rounded-xl"
           >
 
-            Download
+            Open PDF
 
           </a>
 
         </div>
-
-      </div>
-
-      <div className="p-6 flex justify-center">
 
         <PDFViewer
           fileUrl={`http://127.0.0.1:8000${documentData.file}`}
