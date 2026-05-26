@@ -1,7 +1,15 @@
 import {
+  useRef,
+} from "react";
+
+import SignatureCanvas
+from "react-signature-canvas";
+
+import {
   PenTool,
   Upload,
   FileText,
+  Eraser,
   Download,
 } from "lucide-react";
 
@@ -11,133 +19,154 @@ import {
 
 const Home = () => {
 
+  const signatureRef =
+    useRef<any>(null);
+
+  const clearSignature = () => {
+
+    signatureRef.current.clear();
+
+  };
+
+  const downloadSignature = () => {
+
+    const image =
+      signatureRef.current
+        .getTrimmedCanvas()
+        .toDataURL("image/png");
+
+    const link =
+      document.createElement("a");
+
+    link.href = image;
+
+    link.download =
+      "signature.png";
+
+    link.click();
+
+  };
+
   return (
 
-    <div className="min-h-screen bg-[#f5f5f5]">
+    <div className="min-h-screen bg-[#f4f4f4] flex flex-col">
 
       {/* HEADER */}
 
-      <header className="w-full flex justify-between items-center px-10 py-6">
+      <header className="flex justify-center pt-8 pb-5">
 
-        <div className="flex items-center gap-2">
+        <h1 className="text-5xl font-light">
 
-          <span className="text-pink-500 text-5xl font-light">
+          <span className="text-pink-500">
             e
           </span>
 
-          <span className="text-5xl font-light text-black">
-            -Sign
-          </span>
+          -Sign
 
-        </div>
-
-        <div className="flex gap-4">
-
-          <Link
-            to="/login"
-            className="px-6 py-3 rounded-xl border border-gray-300 hover:bg-white transition"
-          >
-            Login
-          </Link>
-
-          <Link
-            to="/register"
-            className="bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition"
-          >
-            Register
-          </Link>
-
-        </div>
+        </h1>
 
       </header>
 
-      {/* HERO SECTION */}
+      {/* MAIN CARD */}
 
-      <section className="max-w-7xl mx-auto px-6">
+      <div className="w-full flex justify-center px-6">
 
-        <div className="border border-gray-400 rounded-2xl bg-white h-650px">
+        <div className="bg-white border border-gray-300 rounded-3xl shadow-sm w-full max-w-7xl p-10">
 
-          {/* PDF VIEW AREA */}
+          {/* SIGNATURE PAD */}
 
-          <div className="w-full h-full flex items-center justify-center">
+          <div className="bg-gray-50 border border-gray-300 rounded-2xl h-120 flex flex-col items-center justify-center relative overflow-hidden">
 
-            <div className="bg-gray-100 w-[90%] h-[85%] rounded-xl border border-gray-300 flex items-center justify-center">
+      
 
-              <div className="text-center">
+            <div className="mt-10">
 
-                <FileText
-                  size={90}
-                  className="mx-auto text-gray-400"
-                />
-
-
-                <div className="flex gap-5 justify-center mt-10">
-
-                  <Link
-                    to="/upload"
-                    className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-2xl flex items-center gap-3 transition"
-                  >
-
-                    <Upload size={22} />
-
-                    Upload PDF
-
-                  </Link>
-
-                  <Link
-                    to="/documents"
-                    className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl flex items-center gap-3 transition"
-                  >
-
-                    <FileText size={22} />
-
-                    My Documents
-
-                  </Link>
-
-                </div>
-
-              </div>
+              <SignatureCanvas
+                ref={signatureRef}
+                penColor="black"
+                canvasProps={{
+                  width: 900,
+                  height: 320,
+                }}
+              />
 
             </div>
 
+            <p className="text-gray-500 mt-5">
+
+              Draw your signature here
+
+            </p>
+
           </div>
 
-          {/* FLOATING TOOLBAR */}
+          {/* ACTION BUTTONS */}
 
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-[#d9d9d9] shadow-xl rounded-2xl px-6 py-4 flex items-center gap-6">
+          <div className="flex flex-wrap justify-center gap-5 mt-8">
 
-            <button className="bg-white p-3 rounded-lg hover:bg-gray-100">
+            <Link
+              to="/upload"
+              className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-2xl flex items-center gap-3 transition"
+            >
 
-              <Upload size={20} />
+              <Upload size={22} />
 
-            </button>
+              Upload PDF
 
-            <div className="w-px h-8 bg-gray-400"></div>
+            </Link>
 
-            <button className="bg-black text-white p-3 rounded-lg">
+            <Link
+              to="/documents"
+              className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl flex items-center gap-3 transition"
+            >
 
-              <PenTool size={20} />
+              <FileText size={22} />
 
-            </button>
+              My Documents
 
-            <div className="w-px h-8 bg-gray-400"></div>
-
-            <button className="bg-white p-3 rounded-lg hover:bg-gray-100">
-
-              <Download size={20} />
-
-            </button>
+            </Link>
 
           </div>
 
         </div>
 
-      </section>
+      </div>
 
-      {/* FEATURES */}
+      {/* FLOATING TOOLBAR */}
 
-     
+      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-[#dcdcdc] px-6 py-4 rounded-2xl shadow-xl flex items-center gap-6">
+
+        <button
+          onClick={clearSignature}
+          className="bg-white hover:bg-gray-100 p-4 rounded-xl transition"
+        >
+
+          <Eraser size={22} />
+
+        </button>
+
+        <div className="w-px h-8 bg-gray-400"></div>
+
+        <button
+          className="bg-black text-white p-4 rounded-xl"
+        >
+
+          <PenTool size={22} />
+
+        </button>
+
+        <div className="w-px h-8 bg-gray-400"></div>
+
+        <button
+          onClick={downloadSignature}
+          className="bg-white hover:bg-gray-100 p-4 rounded-xl transition"
+        >
+
+          <Download size={22} />
+
+        </button>
+
+      </div>
 
     </div>
   );
