@@ -165,11 +165,7 @@ const Home = () => {
 
             </h2>
 
-            <p className="text-gray-500 mt-3">
-
-              Upload documents securely and manage files online.
-
-            </p>
+  
 
           </div>
 
