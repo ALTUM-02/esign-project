@@ -70,17 +70,6 @@ const Home = () => {
                   className="mx-auto text-gray-400"
                 />
 
-                <h1 className="text-4xl font-bold mt-6 text-gray-700">
-
-                  E-Signature Platform
-
-                </h1>
-
-                <p className="text-gray-500 mt-4 text-lg">
-
-                  Upload, Sign and Download PDFs Easily
-
-                </p>
 
                 <div className="flex gap-5 justify-center mt-10">
 
@@ -148,72 +137,7 @@ const Home = () => {
 
       {/* FEATURES */}
 
-      <section className="max-w-7xl mx-auto mt-20 px-6 pb-20">
-
-        <div className="grid md:grid-cols-3 gap-8">
-
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
-
-            <Upload
-              size={40}
-              className="text-pink-500"
-            />
-
-            <h2 className="text-2xl font-bold mt-5">
-
-              Upload PDFs
-
-            </h2>
-
-  
-
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
-
-            <PenTool
-              size={40}
-              className="text-pink-500"
-            />
-
-            <h2 className="text-2xl font-bold mt-5">
-
-              Digital Signatures
-
-            </h2>
-
-            <p className="text-gray-500 mt-3">
-
-              Place signatures anywhere on PDF pages instantly.
-
-            </p>
-
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
-
-            <Download
-              size={40}
-              className="text-pink-500"
-            />
-
-            <h2 className="text-2xl font-bold mt-5">
-
-              Download & Share
-
-            </h2>
-
-            <p className="text-gray-500 mt-3">
-
-              Export signed PDFs and share them securely.
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
+     
 
     </div>
   );
