@@ -1,17 +1,21 @@
-import { ReactNode } from "react";
-import Navbar from "../components/navbar/Navbar";
+import { Outlet }
+from "react-router-dom";
 
-type Props = {
-  children: ReactNode;
-};
+import Navbar
+from "../components/navbar/Navbar";
 
-const MainLayout = ({ children }: Props) => {
+const MainLayout = () => {
+
   return (
+
     <div>
+
       <Navbar />
 
       <main>
-        {children}
+
+        <Outlet />
+
       </main>
 
     </div>
