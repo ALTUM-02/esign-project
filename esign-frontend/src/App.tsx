@@ -22,8 +22,6 @@ import Documents from "./pages/Documents/Documents";
 
 import DocumentView from "./pages/DocumentView/DocumentView";
 
-import SignaturePadPage
-from "./pages/Signature/SignaturePadPage";
 
 function App() {
 
@@ -77,12 +75,6 @@ function App() {
             element={<DocumentView />}
           />
 
-          <Route
-            path="/signature"
-            element={
-              <SignaturePadPage />
-            }
-          />
 
         </Route>
 

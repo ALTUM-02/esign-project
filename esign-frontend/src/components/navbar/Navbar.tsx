@@ -9,7 +9,6 @@ const Navbar = () => {
 
       <div className="space-x-6">
         <Link to="/">Home</Link>
-        <Link to="/signature">Signature</Link>
         <Link to="/sign">Sign</Link>
         <Link to="/pdf-viewer">Document Viewer</Link>
         <Link to="/login">Login</Link>
