@@ -94,4 +94,4 @@ const DocumentView = () => {
   );
 };
 
-export default DocumentView;
+export default Documen
