@@ -10,7 +10,6 @@ from .serializers import (
     DocumentSerializer,
 )
 
-from .models import Document
 from authentication.models import AuditTrail
 
 from django.core.mail import EmailMessage
