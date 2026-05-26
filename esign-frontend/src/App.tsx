@@ -22,6 +22,8 @@ import Documents from "./pages/Documents/Documents";
 
 import DocumentView from "./pages/DocumentView/DocumentView";
 
+import PDFViewer from "./components/pdf/PDFViewer";
+
 
 function App() {
 
@@ -64,6 +66,11 @@ function App() {
             path="/sign"
             element={<Sign />}
           />
+
+          <Route
+            path="/PDFViewer"
+            element={<PDFViewer />}
+          />  
 
           <Route
             path="/documents"
