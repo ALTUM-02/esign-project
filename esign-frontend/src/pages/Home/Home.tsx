@@ -28,6 +28,8 @@ const Home = () => {
     setSavedSignature] =
     useState<string | null>(null);
 
+  const navigate = useNavigate();  
+
   /* CLEAR SIGNATURE */
 
   const clearSignature = () => {
