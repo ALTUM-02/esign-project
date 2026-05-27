@@ -135,7 +135,7 @@ const Home = () => {
 
           {/* SIGNATURE PAD */}
 
-          <div className="bg-gray-50 border border-gray-300 rounded-2xl h-[500px] flex flex-col items-center justify-center overflow-hidden">
+          <div className="bg-gray-50 border border-gray-300 rounded-2xl h-500px flex flex-col items-center justify-center overflow-hidden">
 
             <SignatureCanvas
               ref={signatureRef}
