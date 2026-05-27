@@ -28,7 +28,8 @@ const Home = () => {
     setSavedSignature] =
     useState<string | null>(null);
 
-  const navigate = useNavigate();  
+  const navigate = 
+    useNavigate();  
 
   /* CLEAR SIGNATURE */
 
@@ -66,10 +67,7 @@ const Home = () => {
 
     /* SAVE TO STATE */
 
-    setSavedSignature(
-      signatureImage
-    );
-
+    
     /* SAVE TO LOCAL STORAGE */
 
     localStorage.setItem(
@@ -80,6 +78,8 @@ const Home = () => {
     alert(
       "Signature saved successfully"
     );
+
+    navigate("/saved-signature");
 
   };
 
