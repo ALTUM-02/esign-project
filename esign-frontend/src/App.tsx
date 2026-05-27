@@ -18,6 +18,8 @@ import Upload from "./pages/Upload/Upload";
 
 import Sign from "./pages/Sign/Sign";
 
+import SavedSignature from "./pages/SavedSignature/SavedSignature";
+
 import Documents from "./pages/Documents/Documents";
 
 import DocumentView from "./pages/DocumentView/DocumentView";
@@ -66,6 +68,11 @@ function App() {
             path="/sign"
             element={<Sign />}
           />
+
+          <Route
+            path="/saved-signature"
+            element={<SavedSignature />}
+          />  
 
           <Route
             path="/PDFViewer"
