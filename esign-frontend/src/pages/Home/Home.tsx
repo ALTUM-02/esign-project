@@ -17,7 +17,7 @@ import {
 
 import {
   Link,
-  useNa
+  useNavigate
 } from "react-router-dom";
 
 const Home = () => {
