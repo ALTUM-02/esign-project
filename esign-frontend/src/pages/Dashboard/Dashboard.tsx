@@ -1,92 +1,49 @@
 import {
-  useEffect,
-  useState,
-} from "react";
-
-import {
   FileText,
-  PenTool,
   Upload,
+  PenTool,
+  CheckCircle,
+  Clock,
   User,
 } from "lucide-react";
 
-import { Link } from "react-router-dom";
-
-import api from "../../services/api";
-
-type UserType = {
-  id: number;
-  username: string;
-  email: string;
-  is_staff: boolean;
-};
-
 const Dashboard = () => {
-
-  const [user, setUser] =
-    useState<UserType | null>(
-      null
-    );
-
-  useEffect(() => {
-
-    api.get("/me/")
-      .then((response) => {
-
-        setUser(response.data);
-
-      })
-      .catch((error) => {
-
-        console.error(error);
-
-      });
-
-  }, []);
-
   return (
-
-    <div className="min-h-screen bg-gray-100 flex">
+    <div className="min-h-screen bg-slate-100 flex">
 
       {/* SIDEBAR */}
 
-      <aside className="w-64 bg-blue-900 text-white p-6 hidden md:flex flex-col">
+      <aside className="w-72 bg-slate-900 text-white p-6">
 
         <h1 className="text-3xl font-bold mb-10">
-
           E-Sign
-
         </h1>
 
-        <nav className="flex flex-col gap-4">
+        <nav className="space-y-4">
 
-          <Link
-            to="/dashboard"
-            className="hover:bg-blue-700 p-3 rounded-lg"
+          <a
+            href="/dashboard"
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-800"
           >
+            <FileText size={20} />
             Dashboard
-          </Link>
+          </a>
 
-          <Link
-            to="/upload"
-            className="hover:bg-blue-700 p-3 rounded-lg"
+          <a
+            href="/upload"
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-800"
           >
+            <Upload size={20} />
             Upload PDF
-          </Link>
+          </a>
 
-          <Link
-            to="/signature"
-            className="hover:bg-blue-700 p-3 rounded-lg"
+          <a
+            href="/"
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-800"
           >
+            <PenTool size={20} />
             Signature Pad
-          </Link>
-
-          <Link
-            to="/sign"
-            className="hover:bg-blue-700 p-3 rounded-lg"
-          >
-            Sign Document
-          </Link>
+          </a>
 
         </nav>
 
@@ -94,7 +51,7 @@ const Dashboard = () => {
 
       {/* MAIN */}
 
-      <main className="flex-1 p-6">
+      <main className="flex-1 p-8">
 
         {/* HEADER */}
 
@@ -102,36 +59,28 @@ const Dashboard = () => {
 
           <div>
 
-            <h1 className="text-4xl font-bold text-gray-800">
-
+            <h1 className="text-4xl font-bold">
               Dashboard
-
             </h1>
 
             <p className="text-gray-500">
-
-              Welcome to E-Sign System
-
+              Manage your documents and signatures
             </p>
 
           </div>
 
-          <div className="bg-white p-4 rounded-xl shadow flex items-center gap-3">
+          <div className="bg-white px-6 py-4 rounded-2xl shadow flex items-center gap-4">
 
-            <User size={28} />
+            <User />
 
             <div>
 
-              <p className="font-bold">
+              <h3 className="font-bold">
+                Martin
+              </h3>
 
-                {user?.username}
-
-              </p>
-
-              <p className="text-sm text-gray-500">
-
-                {user?.email}
-
+              <p className="text-gray-500 text-sm">
+                User Account
               </p>
 
             </div>
@@ -142,92 +91,47 @@ const Dashboard = () => {
 
         {/* STATS */}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
 
-          <div className="bg-white p-6 rounded-2xl shadow">
+          <div className="bg-linear-to-r from-blue-500 to-blue-700 text-white p-6 rounded-3xl shadow-lg">
 
-            <div className="flex justify-between items-center">
+            <FileText size={40} />
 
-              <div>
+            <h2 className="text-4xl font-bold mt-4">
+              12
+            </h2>
 
-                <p className="text-gray-500">
-
-                  Uploaded PDFs
-
-                </p>
-
-                <h2 className="text-3xl font-bold mt-2">
-
-                  12
-
-                </h2>
-
-              </div>
-
-              <FileText
-                size={40}
-                className="text-blue-600"
-              />
-
-            </div>
+            <p>
+              Uploaded PDFs
+            </p>
 
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow">
+          <div className="bg-linear-to-r from-green-500 to-green-700 text-white p-6 rounded-3xl shadow-lg">
 
-            <div className="flex justify-between items-center">
+            <CheckCircle size={40} />
 
-              <div>
+            <h2 className="text-4xl font-bold mt-4">
+              8
+            </h2>
 
-                <p className="text-gray-500">
-
-                  Signed Documents
-
-                </p>
-
-                <h2 className="text-3xl font-bold mt-2">
-
-                  8
-
-                </h2>
-
-              </div>
-
-              <PenTool
-                size={40}
-                className="text-green-600"
-              />
-
-            </div>
+            <p>
+              Signed Documents
+            </p>
 
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow">
+          <div className="bg-linear-to-r from-purple-500 to-purple-700 text-white p-6 rounded-3xl shadow-lg">
 
-            <div className="flex justify-between items-center">
+            <Clock size={40} />
 
-              <div>
+            <h2 className="text-4xl font-bold mt-4">
+              4
+            </h2>
 
-                <p className="text-gray-500">
-
-                  Pending Files
-
-                </p>
-
-                <h2 className="text-3xl font-bold mt-2">
-
-                  4
-
-                </h2>
-
-              </div>
-
-              <Upload
-                size={40}
-                className="text-purple-600"
-              />
-
-            </div>
+            <p>
+              Pending Documents
+            </p>
 
           </div>
 
@@ -235,38 +139,132 @@ const Dashboard = () => {
 
         {/* QUICK ACTIONS */}
 
-        <div className="bg-white rounded-2xl shadow p-6">
+        <div className="bg-white p-6 rounded-3xl shadow mb-8">
 
           <h2 className="text-2xl font-bold mb-5">
-
             Quick Actions
-
           </h2>
 
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex flex-wrap gap-4">
 
-            <Link
-              to="/upload"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-xl"
+            <a
+              href="/upload"
+              className="bg-blue-600 text-white px-6 py-3 rounded-xl"
             >
               Upload PDF
-            </Link>
+            </a>
 
-            <Link
-              to="/signature"
-              className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-xl"
+            <a
+              href="/"
+              className="bg-green-600 text-white px-6 py-3 rounded-xl"
             >
               Create Signature
-            </Link>
+            </a>
 
-            <Link
-              to="/sign"
-              className="bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-xl"
+            <a
+              href="/documents"
+              className="bg-purple-600 text-white px-6 py-3 rounded-xl"
             >
-              Sign Document
-            </Link>
+              View Documents
+            </a>
 
           </div>
+
+        </div>
+
+        {/* DOCUMENT TABLE */}
+
+        <div className="bg-white p-6 rounded-3xl shadow mb-8">
+
+          <h2 className="text-2xl font-bold mb-5">
+            Recent Documents
+          </h2>
+
+          <table className="w-full">
+
+            <thead>
+
+              <tr className="border-b">
+
+                <th className="text-left py-3">
+                  Document
+                </th>
+
+                <th className="text-left py-3">
+                  Status
+                </th>
+
+                <th className="text-left py-3">
+                  Date
+                </th>
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr className="border-b">
+
+                <td className="py-3">
+                  Contract.pdf
+                </td>
+
+                <td className="text-green-600">
+                  Signed
+                </td>
+
+                <td>
+                  30 May 2026
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td className="py-3">
+                  Agreement.pdf
+                </td>
+
+                <td className="text-yellow-600">
+                  Pending
+                </td>
+
+                <td>
+                  29 May 2026
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        {/* ACTIVITY */}
+
+        <div className="bg-white p-6 rounded-3xl shadow">
+
+          <h2 className="text-2xl font-bold mb-5">
+            Recent Activity
+          </h2>
+
+          <ul className="space-y-3">
+
+            <li>
+              Uploaded Contract.pdf
+            </li>
+
+            <li>
+              Signed Agreement.pdf
+            </li>
+
+            <li>
+              Downloaded Signed Document
+            </li>
+
+          </ul>
 
         </div>
 
@@ -276,4 +274,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Dash

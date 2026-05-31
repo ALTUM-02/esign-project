@@ -16,7 +16,7 @@ class Document(models.Model):
     )
 
     file = models.FileField(
-        upload_to="documents/"
+        upload_to="documents/", null=True, blank=True
     )
 
     uploaded_at = models.DateTimeField(

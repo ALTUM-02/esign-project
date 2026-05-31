@@ -61,18 +61,21 @@ def upload_document(request):
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def get_documents(request):
+    print("Getting documents")
+    try:
+        documents = Document.objects.filter(
+            user=request.user
+        ).order_by("-id")
 
-    documents = Document.objects.filter(
-        user=request.user
-    ).order_by("-id")
+        serializer = DocumentSerializer(
+            documents,
+            many=True
+        )
 
-    serializer = DocumentSerializer(
-        documents,
-        many=True
-    )
-
-    return Response(serializer.data)
-
+        return Response(serializer.data)
+    except Exception as e:
+        return Response(e)
+    
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def save_signed_pdf(request, pk):
