@@ -167,5 +167,5 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 
-SECRET_KEY = config('SECRET_KEY', default='django-insecure-replace-me')  
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-replace-m
 
